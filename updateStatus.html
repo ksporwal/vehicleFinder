@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<link rel="stylesheet" href = "style1.css">
+<!--		 <script src="lost_validation.js"></script>       -->
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  		<title>Status Update</title>
+        
+        
+        <style>
+            select {
+                padding:3px;
+                border-radius:5px;
+                background: #f8f8f8;
+                color:#000;
+                border:1px solid #555;
+                outline:none;
+                display: inline-block;
+                width:250px;
+                cursor:pointer;
+                text-align:left;
+                font:inherit;
+            }
+        </style>
+        
+	</head>
+	<body>
+		<div class="container, content" >
+		<h2>Update Status of requests</h2>
+		
+			
+				<div class="row main" id="parentDiv">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	   <!--            		<h1 class="title">Company Name</h1>		-->
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form action="saveStatus.php" method="post" class="form-horizontal"  >
+						
+						<div class="form-group required">
+							<label for="id" class="cols-sm-2 control-label">Request ID</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="id"   placeholder="Enter Request ID" required="required" />
+								</div>
+							</div>
+						</div>
+						
+												
+						<div class="form-group required">
+							<label for="status" class="cols-sm-2 control-label">Message</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+                                    <select id="status" name="status">
+                                        <option value=""></option>
+                                        <option value="Sent for further investigation">Your Request is approved and sent for further investigation...</option>
+                                        <option value="Rejected! Contact Police Station">Your Request has been rejected, kindly visit nearest police station with your legal documents of the vehicle you had lost....</option>
+                                        
+                                    </select>	
+                                </div>
+							</div>
+						</div> 
+                        
+          
+
+						<div class="form-group ">
+							<input type="submit"  class="btn btn-primary btn-lg btn-block login-button">
+						</div>
+						
+					</form>
+					
+				</div>
+			</div>
+		</div>
+
+        
+	
+	</body>
+</html>

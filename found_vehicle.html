@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<link rel="stylesheet" href = "style1.css">
+		<script src="found_validation.js"></script>
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="populateModel.js"></script>
+  		<title>Found Register</title>
+		
+		 <style>
+            select {
+                padding:3px;
+                border-radius:5px;
+                background: #f8f8f8;
+                color:#000;
+                border:1px solid #555;
+                outline:none;
+                display: inline-block;
+                width:250px;
+                cursor:pointer;
+                text-align:left;
+                font:inherit;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="container, content" >
+		<h2>Found Vehicle Information</h2>
+		
+	<!--	<p>The data of a <b>missing</b> vehicle can be entered in the system by any person. He/She needs to mention the same 
+	while entering the data. The mandatory information would be the name of the owner, vehicle registration number, 
+	chassis number, vehicle make and model, date of purchase, insurance policy number and its provider. Location from where the
+	vehicle lost, date and time of missing, his/her contact details like address, phone number, email and the FIR number etc.</p> -->
+			
+			<p>Enter the information of <b>found</b> Vehicle </p>
+			
+				<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	   <!--            		<h1 class="title">Company Name</h1>		-->
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form action="found_vehicle.php" method="POST" class="form-horizontal" name='found_reg'>
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Registration / Vehicle Number</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name"   placeholder="Enter Registration / Vehicle Number" required="required" />
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group ">
+							<label for="engineno" class="cols-sm-2 control-label">Engine Number</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="engineno"  placeholder="Enter Engine Number"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group required">
+							<label for="chassisNo" class="cols-sm-2 control-label">Chassis Number</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="chassisNo"   placeholder="Enter Chassis Number" required="required"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group required">
+							<label for="makeVehicle" class="cols-sm-2 control-label">Make of vehicle</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+                                    <select id="makeVehicle" name="makeVehicle" onchange=" return populate(this.id,'model')">
+                                        <option value=""></option>
+                                        <option value="Yamaha">Yahama</option>
+                                        <option value="Maruti Suzuki">Maruti Suzuki</option>
+                                        <option value="Ford">Ford</option>
+                                    </select>	
+                                </div>
+							</div>
+						</div> 
+                        
+                        <div class="form-group required">
+							<label for="model" class="cols-sm-2 control-label">Model</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<select id="model" name="model"></select>
+
+								</div>
+							</div>
+						</div>
+  
+<!--						
+						<div class="form-group required">
+							<label for="makeVehicle" class="cols-sm-2 control-label">Make of vehicle</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="makeVehicle"   placeholder="Enter Make of vehicle"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group required">
+							<label for="model" class="cols-sm-2 control-label">Model</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="model"  placeholder="Enter Model No."/>
+								</div>
+							</div>
+						</div>
+-->						
+						<div class="form-group required">
+							<label for="color" class="cols-sm-2 control-label">Color</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="color"  placeholder="Enter Color of Vehicle"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group required">
+							<label for="vlocation" class="cols-sm-2 control-label">Vehicle found Location</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="vlocation" placeholder="Enter Vehicle found Location"/>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="form-group ">
+							<label for="contactno" class="cols-sm-2 control-label">Contact Number</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="contactno"  placeholder="Contact Number"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group ">
+							<input type="submit"  class="btn btn-primary btn-lg btn-block login-button" onclick = "return formValidation()">
+						</div>
+						
+						
+						
+
+						
+						
+					</form>
+				</div>
+			</div>
+		</div>
+
+	
+	</body>
+</html>
